@@ -39,7 +39,7 @@ if content_for(:header_tags).present? &&
 
 #content .jstBlock .jstTabs li {
   height: auto;
-  margin: 0;
+  /* margin: 0; */
 }
 
 #content .jstBlock .jstTabs .jstElements {
@@ -211,7 +211,7 @@ function initRedmineWysiwygEditor(element) {
   rwe.setHtmlTagAllowed(<%= html_tag_allowed ? 'true' : 'false' %>);
   rwe.setAutocomplete('<%= escape_javascript auto_complete_issues_path %>',
                       '<%= escape_javascript editor_users_path %>');
-  rwe.setTabModeSwitch(<%= (Setting.plugin_redmine_wysiwyg_editor[:visual_editor_mode_switch_tab] == '1') ? 'true' : 'false' %>);
+  rwe.setTabModeSwitch(<%= (Setting.plugin_redmine_wysiwyg_editor['visual_editor_mode_switch_tab'] == '1') ? 'true' : 'false' %>);
 
   var pid = <%= (@project && @project.id) ? @project.id : 'null' %> ||
       $('#issue_project_id').val();
